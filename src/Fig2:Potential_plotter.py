@@ -66,25 +66,25 @@ def V_shell_Cesium(x,R):
     R_out1 =  R
     R_in1 = R - 6.86
     return PIMC_potential(x,R_in1, 1.359, 5.44,0.0091)  - PIMC_potential(x,R_out1, 1.359, 5.44,0.0091) + PIMC_potential_MCM(x,R_out1)
-
-figsize = plt.rcParams['figure.figsize']
-fig,ax = plt.subplots(figsize=(figsize[0],figsize[1]), constrained_layout=True)
-mpl.rcParams['axes.linewidth'] = 2.0
-R = 28.58
-R1 = 8 + 6.86
-R2 = 28.58 - (3*6.86)
-r = np.linspace(0,7.9,100)
-r2 = np.linspace(0,12.0,100)
-#ax.plot(r,V_shell_Cesium(r2,R1), linestyle='solid', color='green',label='MCM-41/Cs (1 layer)')
-ax.plot(r,PIMC_potential(r,R2,1.359, 5.44,0.0091), linestyle='--', color='#5E4Fa2',label='Infinite Cs')
-ax.plot(r,V_2shell_Cesium(r,R), linestyle='solid', color='#5E4Fa2',alpha=0.7,label='MCM-41/Cs (2 layers)')
-ax.legend(handlelength = 1)
-ax.set_ylabel(r'V[K]')
-ax.set_xlabel(r'r[Å]')
-ax.set_ylim(-20,20)
-ax.set_xlim(0,5)
-#ax.tick_params(size=6)
-plt.savefig('Potential-comparison.pdf')
+with plt.style.context('aps'):
+    figsize = plt.rcParams['figure.figsize']
+    fig,ax = plt.subplots(figsize=(figsize[0],figsize[1]), constrained_layout=True)
+    mpl.rcParams['axes.linewidth'] = 2.0
+    R = 28.58
+    R1 = 8 + 6.86
+    R2 = 28.58 - (3*6.86)
+    r = np.linspace(0,7.9,100)
+    r2 = np.linspace(0,12.0,100)
+    #ax.plot(r,V_shell_Cesium(r2,R1), linestyle='solid', color='green',label='MCM-41/Cs (1 layer)')
+    ax.plot(r,PIMC_potential(r,R2,1.359, 5.44,0.0091), linestyle='--', color='#5E4Fa2',label='Infinite Cs')
+    ax.plot(r,V_2shell_Cesium(r,R), linestyle='solid', color='#5E4Fa2',alpha=0.7,label='MCM-41/Cs (2 layers)')
+    ax.legend(handlelength = 1)
+    ax.set_ylabel(r'V[K]')
+    ax.set_xlabel(r'r[Å]')
+    ax.set_ylim(-20,20)
+    ax.set_xlim(0,5)
+    #ax.tick_params(size=6)
+    plt.savefig('Potential-comparison.pdf')
 
 
 
