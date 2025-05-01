@@ -3,7 +3,7 @@ import scipy.special as scp
 import scipy.integrate as intgr
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-plt.style.use('../aps.mplstyle')
+plt.style.use('../include/aps.mplstyle')
 mpl.rcParams["figure.figsize"] = [3.4039, 2.10373]
 rm = 2.9673;
 
@@ -101,6 +101,22 @@ def PIMC_potential_MCM(r,R):
     val = (np.pi*epsilon*sigma*sigma*sigma*density/3.0)*(sigoR9*v9 - sigoR3*v3)
     return val
 
+def add_inset_image(fig,ax,image_file, left=0.0, bottom=0.0, width=0.25):
+    
+    im = plt.imread(image_file,format='png')
+    
+    #inv = ax.transData.inverted()
+    #print(inv.transform([left,bottom]))
+    
+    #X0, Y0 = fig.transFigure.transform([left,bottom]).inverted()
+    #print(X0,Y0)
+    
+    ax_coords = [left,bottom,width,im.shape[0]/im.shape[1]*width]
+    newax = fig.add_axes(ax_coords)
+    #newax = ax.inset_axes(ax_coords)
+    newax.imshow(im,interpolation='none')
+    newax.axis('off')
+
 lb = 0.001
 rb = 10
 p = 500
@@ -110,15 +126,15 @@ with plt.style.context('aps'):
     figsize = plt.rcParams['figure.figsize']
     fig,ax = plt.subplots(figsize=(figsize[0],figsize[1]), constrained_layout=True)
 
-    ax.set_ylim(-200,49)
+    ax.set_ylim(-155,40)
     #plt.title('Radial Helium - Cesium interaction potential')
     ax.set_ylabel(r'$U_{\rm pore}$ [K]')
     ax.set_xlabel(r'$r$ [Å]')
-    ax.plot(xval2,V_shell_Ar(xval2)+PIMC_potential_MCM(xval2,15.51),label=r'$U_{\rm Ar/MCM}(r)$',color='#D7414E')
-    ax.plot(xval,V_shell(xval)+PIMC_potential_MCM(xval,15.51),label=r'$U_{\rm Cs/MCM}(r)$',color='#5E4Fa2')
+    ax.plot(xval2,V_shell_Ar(xval2)+PIMC_potential_MCM(xval2,15.51),label=r'$U_{\rm Ar/MCM41}$',color='#D7414E', lw=1.5)
+    ax.plot(xval,V_shell(xval)+PIMC_potential_MCM(xval,15.51),label=r'$U_{\rm Cs/MCM41}$',color='#5E4Fa2', lw=1.5)
     #plt.plot(xval2,PIMC_potential_MCM(xval2,15.51),label=r'$U(r)}$')
-    ax.plot(xval2,PIMC_potential_MCM(xval2,15.51), label=r'$U_{\rm MCM}$',color='k')
+    ax.plot(xval2,PIMC_potential_MCM(xval2,15.51), label=r'$U_{\rm MCM41}$',color='k', lw=1.5)
     ax.set_xlim(0,14.9)
-    ax.legend(handlelength=1)
-    plt.savefig('Potential_comp.pdf')
-    plt.show()
+    ax.legend(handlelength=1, loc=(0.55,0.05))    
+    add_inset_image(fig,ax,'../figures/MCM41_with_argon_filtered.png',left=0.1,bottom=0.25,width=0.5)  
+    plt.savefig('../figures/Potential_comp.pdf')

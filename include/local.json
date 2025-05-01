@@ -1,0 +1,6 @@
+{
+    "pimc_bin_path": "/Users/agdelma/opt/miniconda3/bin",
+    "data_dir": "../data",
+    "gnu_parallel": "/opt/local/bin",
+    "raw_data_dir": "../data/qmc"
+}
