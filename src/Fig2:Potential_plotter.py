@@ -79,13 +79,14 @@ with plt.style.context('aps'):
     ax.plot(r,PIMC_potential(r,R2,1.359, 5.44,0.0091), linestyle='--', color='#5E4Fa2',label='Infinite Cs')
     ax.plot(r,V_2shell_Cesium(r,R), linestyle='solid', color='#5E4Fa2',alpha=0.7,label='MCM-41/Cs (2 layers)')
     ax.legend(handlelength = 1)
-    ax.set_ylabel(r'V[K]')
-    ax.set_xlabel(r'r[Å]')
-    ax.set_ylim(-20,20)
-    ax.set_xlim(0,5)
+    ax.set_ylabel(r'$V$ [K]')
+    ax.set_xlabel(r'$r$ [Å]')
+    ax.set_ylim(-19,19)
+    ax.set_xlim(0,4.7)
+    
     #ax.tick_params(size=6)
     plt.savefig('Potential-comparison.pdf')
-
+    #plt.show()
 
 
 

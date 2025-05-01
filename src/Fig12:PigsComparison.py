@@ -21,7 +21,7 @@ with np.load(fname) as f:
 norm = normalize_psi_PIMC(radial,rval)
 
 
-f2 = open('../data/radial-N-reduce-87e3247b-4b29-4e2a-998d-9e43a48f3593.dat','r')
+f2 = open('../data/tauscale/radial-N-reduce-1a32c4e3-7ed0-463e-93dc-530e81f82cc6.dat','r')
 lines = f2.readlines()
 x = np.array([])
 y = np.array([])
@@ -46,10 +46,10 @@ with plt.style.context('aps'):
    ax.errorbar(x,2*y/norm,yerr=2*z/norm, linestyle="None",marker = '+', capsize=1,label='Re-normalised PIMC',color='#5E4FA2',alpha=0.7)
    ax.errorbar(x,y,yerr=z, linestyle="None",marker = '+',capsize=1,label='PIMC',color='#5E4FA2',alpha=0.5)
    ax.set_ylabel(r'$|\psi(r)|^2$')
-   ax.set_xlabel('r (Å)')
-   ax.set_xlim(0,6)
+   ax.set_xlabel(r'$r$ [Å]' )
+   ax.set_xlim(0,5.9)
    ax.legend()
    plt.savefig('Pigs_comparison.pdf')
-   #plt.show()    
+   plt.show()    
 
 

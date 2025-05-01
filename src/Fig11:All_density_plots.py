@@ -133,7 +133,8 @@ norm = normalize_psi_PIMC(radial,rval)
 ax1.plot(rval,radial, 'ko-', label="Hardwall",alpha=0.2)
 ax1.text(0.95,0.95,'R = 4 Å',ha="right",va="top",transform = ax1.transAxes)
 ax1.set_ylabel(r'$|\psi(r)|^2$',fontsize=10)
-ax1.set_xlabel('r (Å)',fontsize=10)
+ax1.set_xlabel('$r$ [Å]',fontsize=10)
+ax1.set_xlim(0,3.9)
 #ax1.legend(handlelength = 1.5)
 
 fname = "../data/Radial-wavefunction-KR5.npz"
@@ -194,11 +195,11 @@ ax2.plot(rval,radial, 'ko-', label="Hardwall",alpha=0.5)
 
 ax2.text(0.95,0.95,'R = 5 Å',ha="right",va="top",transform = ax2.transAxes)
 ax2.set_ylabel(r'$|\psi(r)|^2$',fontsize=10)
-ax2.set_xlabel('r (Å)',fontsize=10)
+ax2.set_xlabel('$r$ [Å]',fontsize=10)
 handles, labels = ax2.get_legend_handles_labels()
 order = [1,4,0,5,6,3,2,7]
 ax2.legend([handles[idx] for idx in order],[labels[idx] for idx in order],loc = 7, handlelength = 1.5)
-
+ax2.set_xlim(0,4.9)
 
 fname = "../data/Radial-wavefunction-KR6.npz"
 with np.load(fname, 'rb') as f:
@@ -259,6 +260,7 @@ ax3.plot(rval,radial, 'ko-', label="Hardwall",alpha=0.5)
 ax3.text(0.95,0.95,'R = 6 Å',ha="right",va="top",transform = ax3.transAxes)
 ax3.set_ylabel(r'$|\psi(r)|^2$',fontsize=10)
 ax3.set_xlabel('r (Å)',fontsize=10)
+ax3.set_xlim(0,5.9)
 #ax3.legend(handlelength = 1.5)
 
 fname = "../data/Radial-wavefunction-KR8.npz"
@@ -319,7 +321,8 @@ ax4.plot(rval,radial, 'ko-', label="Hardwall",alpha=0.5)
 
 ax4.text(0.95,0.95,'R = 8 Å',ha="right",va="top",transform = ax4.transAxes)
 ax4.set_ylabel(r'$|\psi(r)|^2$',fontsize=10)
-ax4.set_xlabel('r (Å)',fontsize=10)
+ax4.set_xlabel('$r$ [Å]',fontsize=10)
+ax4.set_xlim(0,7.9)
 #ax4.legend(handlelength = 1.5)
 
 fname = "../data/Radial-wavefunction-KR10.npz"
@@ -380,7 +383,8 @@ ax5.plot(rval,radial, 'ko-', label="Hardwall",alpha=0.5)
 
 ax5.text(0.95,0.95,'R = 10 Å',ha="right",va="top",transform = ax5.transAxes)
 ax5.set_ylabel(r'$|\psi(r)|^2$',fontsize=10)
-ax5.set_xlabel('r (Å)',fontsize=10)
+ax5.set_xlabel('$r$ [Å]',fontsize=10)
+ax5.set_xlim(0,9.9)
 #ax5.legend(handlelength = 1.5)
 
 fname = "../data/Radial-wavefunction-KR12.npz"
@@ -441,7 +445,8 @@ ax6.plot(rval,radial, 'ko-', label="Hardwall",alpha=0.5)
 
 ax6.text(0.95,0.95,'R = 12 Å',ha="right",va="top",transform = ax6.transAxes)
 ax6.set_ylabel(r'$|\psi(r)|^2$',fontsize=10)
-ax6.set_xlabel('r (Å)',fontsize=10)
+ax6.set_xlabel('$r$ [Å]',fontsize=10)
+ax6.set_xlim(0,11.9)
 #ax6.legend(handlelength = 1.5)
 plt.savefig("Density_plot.pdf")
 plt.show()

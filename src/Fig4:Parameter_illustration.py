@@ -97,8 +97,8 @@ with plt.style.context('aps'):
     ax.set_ylim(-10,10.5)
     ax.set_xlim(0,8)
     #plt.title('Radial Helium - Cesium interaction potential')
-    ax.set_ylabel(r'$V$ (K)')
-    ax.set_xlabel(r'$r$ ($\rm \AA$)')
+    ax.set_ylabel(r'$U_{\rm pore}$ [K]')
+    ax.set_xlabel(r'$r$ [$\rm \AA$]')
     ax.plot(xval,V_infinite(xval), color='k')
     Csradial = 2000*Csradial
     Arradial = 2000*Arradial
@@ -114,9 +114,9 @@ with plt.style.context('aps'):
     #ax.vlines(7.8,-10,10.5,color='k',linestyle='--')
     #ax.arrow(r0x,yval,2*rHe,0,length_includes_head=True,head_width=0.3, head_length=0.1)
     #ax.arrow(rHe/2,yval,rHe/2,0,length_includes_head=True,head_width=0.3, head_length=0.1)
-    ax.plot([0,rHe],[yval,yval],color='k', linestyle='-', linewidth=1)
-    
-    ax.text(rHe/2-0.4, -8.5, r'$\rho_{{\rm vdW}}$', fontsize=8)
+    #ax.plot([0,rHe],[yval,yval],color='k', linestyle='-', linewidth=1)
+    ax.text(3.8, 4, r'$\rho(r)$', fontsize=8)
+    #ax.text(rHe/2-0.4, -8.5, r'$\rho_{{\rm vdW}}$', fontsize=8)
     plt.text(6.30-0.2, -8.5, r'$\rho_{{\rm well}}$', fontsize=8)
     #plt.plot(xval,V_2shell(xval)+PIMC_potential_MCM(xval,26.72),label=r'$U_{Cs/MCM}(r)$ (2 layer)')
     #plt.plot(xval,V_shell(xval)+PIMC_potential_MCM(xval,12.86),label=r'$U_{Cs/MCM}(r)$ (1 layer)')
@@ -128,4 +128,4 @@ with plt.style.context('aps'):
     ax.set_yticks([])
     ax.set_yticks([], minor=True)
     plt.savefig('Wetting_parameter.pdf')
-    #plt.show()
+    plt.show()
