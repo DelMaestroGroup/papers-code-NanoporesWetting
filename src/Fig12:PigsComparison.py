@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import scipy.integrate as intgr
-plt.style.use('../aps.mplstyle')
+plt.style.use('../include/aps.mplstyle')
 mpl.rcParams["figure.figsize"] = [3.4039, 2.10373]
 
 rm = 2.9673;
@@ -13,7 +13,7 @@ def normalize_psi_PIMC(psi, x):
 
 
 
-fname = "Radial-wavefunction-CsR6.npz"
+fname = "../data/Relaxation/Radial-wavefunction-CsR6.npz"
 with np.load(fname) as f:
    rval = f['arr_0']
    radial = f['arr_1']
@@ -21,7 +21,7 @@ with np.load(fname) as f:
 norm = normalize_psi_PIMC(radial,rval)
 
 
-f2 = open('../data/tauscale/radial-N-reduce-1a32c4e3-7ed0-463e-93dc-530e81f82cc6.dat','r')
+f2 = open('../data/pimc/tauscale/radial-N-reduce-1a32c4e3-7ed0-463e-93dc-530e81f82cc6.dat','r')
 lines = f2.readlines()
 x = np.array([])
 y = np.array([])
@@ -49,7 +49,7 @@ with plt.style.context('aps'):
    ax.set_xlabel(r'$r$ [Å]' )
    ax.set_xlim(0,5.9)
    ax.legend()
-   plt.savefig('Pigs_comparison.pdf')
+   plt.savefig('../figures/Pigs_comparison.pdf')
    plt.show()    
 
 

@@ -4,7 +4,7 @@ import scipy.integrate as intgr
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 
-plt.style.use('../aps.mplstyle')
+plt.style.use('../include/aps.mplstyle')
 mpl.rcParams["figure.figsize"] = [3.4039, 2.10373]
 rm = 2.9673;
 
@@ -82,11 +82,11 @@ xval = np.linspace(lb,rb,p)
 xval2 = np.linspace(0.001,14.5,500)
 rHe = 1.4
 
-with np.load("../data/Radial-wavefunction-CsR8.npz") as f:
+with np.load("../data/Relaxation/Radial-wavefunction-CsR8.npz") as f:
     Csrval = f['arr_0']
     Csradial = f['arr_1']
 
-with np.load("../data/Radial-wavefunction-ArR8.npz") as f:
+with np.load("../data/Relaxation/Radial-wavefunction-ArR8.npz") as f:
     Arrval = f['arr_0']
     Arradial = f['arr_1']
     
@@ -127,5 +127,5 @@ with plt.style.context('aps'):
     ax.set_xticks([], minor=True)
     ax.set_yticks([])
     ax.set_yticks([], minor=True)
-    plt.savefig('Wetting_parameter.pdf')
+    plt.savefig('../figures/Wetting_parameter.pdf')
     plt.show()
