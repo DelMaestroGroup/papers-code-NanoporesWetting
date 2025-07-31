@@ -85,7 +85,7 @@ with plt.style.context('aps'):
     ax.set_xlim(0,4.7)
     
     #ax.tick_params(size=6)
-    plt.savefig('Potential-comparison.pdf')
+    plt.savefig('../figures/Potential-comparison.pdf')
     #plt.show()
 
 

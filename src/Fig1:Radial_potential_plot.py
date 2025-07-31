@@ -117,24 +117,27 @@ def add_inset_image(fig,ax,image_file, left=0.0, bottom=0.0, width=0.25):
     newax.imshow(im,interpolation='none')
     newax.axis('off')
 
-lb = 0.001
-rb = 10
-p = 500
-xval = np.linspace(lb,rb,p)
-xval2 = np.linspace(0.001,16.5,500)
-with plt.style.context('aps'):
-    figsize = plt.rcParams['figure.figsize']
-    fig,ax = plt.subplots(figsize=(figsize[0],figsize[1]), constrained_layout=True)
+if __name__ == "__main__":
+    lb = 0.001
+    rb = 10
+    p = 500
+    xval = np.linspace(lb,rb,p)
+    xval2 = np.linspace(0.001,16.5,500)
+    with plt.style.context('../include/aps.mplstyle'):
+        figsize = plt.rcParams['figure.figsize']
+        fig,ax = plt.subplots(figsize=(figsize[0],figsize[1]), constrained_layout=True)
 
-    ax.set_ylim(-155,40)
-    #plt.title('Radial Helium - Cesium interaction potential')
-    ax.set_ylabel(r'$U_{\rm pore}$ [K]')
-    ax.set_xlabel(r'$r$ [Å]')
-    ax.plot(xval2,V_shell_Ar(xval2)+PIMC_potential_MCM(xval2,15.51),label=r'$U_{\rm Ar/MCM41}$',color='#D7414E', lw=1.5)
-    ax.plot(xval,V_shell(xval)+PIMC_potential_MCM(xval,15.51),label=r'$U_{\rm Cs/MCM41}$',color='#5E4Fa2', lw=1.5)
-    #plt.plot(xval2,PIMC_potential_MCM(xval2,15.51),label=r'$U(r)}$')
-    ax.plot(xval2,PIMC_potential_MCM(xval2,15.51), label=r'$U_{\rm MCM41}$',color='k', lw=1.5)
-    ax.set_xlim(0,14.9)
-    ax.legend(handlelength=1, loc=(0.55,0.05))    
-    add_inset_image(fig,ax,'../figures/MCM41_with_argon_filtered.png',left=0.1,bottom=0.25,width=0.5)  
-    plt.savefig('../figures/Potential_comp.pdf')
+        ax.set_ylim(-155,40)
+        #plt.title('Radial Helium - Cesium interaction potential')
+        ax.set_ylabel(r'$U_{\rm pore}$ [K]')
+        ax.set_xlabel(r'$r$ [Å]')
+        ax.plot(xval2,V_shell_Ar(xval2)+PIMC_potential_MCM(xval2,15.51),label=r'$U_{\rm Ar/MCM41}$',color='#D7414E', lw=1.5)
+        ax.plot(xval,V_shell(xval)+PIMC_potential_MCM(xval,15.51),label=r'$U_{\rm Cs/MCM41}$',color='#5E4Fa2', lw=1.5)
+        #plt.plot(xval2,PIMC_potential_MCM(xval2,15.51),label=r'$U(r)}$')
+        ax.plot(xval2,PIMC_potential_MCM(xval2,15.51), label=r'$U_{\rm MCM41}$',color='k', lw=1.5)
+        ax.set_xlim(0,14.9)
+        ax.legend(handlelength=1, loc=(0.55,0.05))    
+        add_inset_image(fig,ax,'../figures/MCM41_with_argon_filtered.png',left=0.1,bottom=0.25,width=0.5)  
+        plt.savefig('../figures/UPore_vs_r_comparison.pdf')
+        #plt.show()
+    
