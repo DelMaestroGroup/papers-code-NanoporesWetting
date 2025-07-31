@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import scipy.integrate as intgr
-plt.style.use('aps.mplstyle')
+plt.style.use('../include/aps.mplstyle')
 mpl.rcParams["figure.figsize"] = [2*3.4039, 3*2.10373]
 color_cycle = ['C2E69F','5E4Fa2', 'D7414E','F57949','3C93B8', '79C9A4', 'FDBB6C','FEEC9F', '9E0142']
 
@@ -76,56 +76,56 @@ ax4.set_prop_cycle('color',color_cycle)
 ax5.set_prop_cycle('color',color_cycle)
 ax6.set_prop_cycle('color',color_cycle)
 
-fname = "../data/Radial-wavefunction-KR4.npz"
+fname = "../data/Relaxation/Radial-wavefunction-KR4.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax1.plot(rval,radial, 'o-', label="K",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-CsR4.npz"
+fname = "../data/Relaxation/Radial-wavefunction-CsR4.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax1.plot(rval,radial, 'o-', label="Cs",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-ArR4.npz"
+fname = "../data/Relaxation/Radial-wavefunction-ArR4.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax1.plot(rval,radial, 'o-', label="Ar",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-AuR4.npz"
+fname = "../data/Relaxation/Radial-wavefunction-AuR4.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax1.plot(rval,radial, 'o-', label="Au",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-RbR4.npz"
+fname = "../data/Relaxation/Radial-wavefunction-RbR4.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax1.plot(rval,radial, 'o-', label="Rb",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-MgR4.npz"
+fname = "../data/Relaxation/Radial-wavefunction-MgR4.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax1.plot(rval,radial, 'o-', label="Mg",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-NeR4.npz"
+fname = "../data/Relaxation/Radial-wavefunction-NeR4.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax1.plot(rval,radial, 'o-', label="Ne",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-hwallR4.npz"
+fname = "../data/Relaxation/Radial-wavefunction-hwallR4.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
@@ -137,56 +137,56 @@ ax1.set_xlabel('$r$ [Å]',fontsize=10)
 ax1.set_xlim(0,3.9)
 #ax1.legend(handlelength = 1.5)
 
-fname = "../data/Radial-wavefunction-KR5.npz"
+fname = "../data/Relaxation/Radial-wavefunction-KR5.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax2.plot(rval,radial, 'o-', label="K",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-CsR5.npz"
+fname = "../data/Relaxation/Radial-wavefunction-CsR5.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax2.plot(rval,radial, 'o-', label="Cs",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-ArR5.npz"
+fname = "../data/Relaxation/Radial-wavefunction-ArR5.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax2.plot(rval,radial, 'o-', label="Ar",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-AuR5.npz"
+fname = "../data/Relaxation/Radial-wavefunction-AuR5.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax2.plot(rval,radial, 'o-', label="Au",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-RbR5.npz"
+fname = "../data/Relaxation/Radial-wavefunction-RbR5.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax2.plot(rval,radial, 'o-', label="Rb",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-MgR5.npz"
+fname = "../data/Relaxation/Radial-wavefunction-MgR5.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax2.plot(rval,radial, 'o-', label="Mg",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-NeR5.npz"
+fname = "../data/Relaxation/Radial-wavefunction-NeR5.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax2.plot(rval,radial, 'o-', label="Ne",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-hwallR5.npz"
+fname = "../data/Relaxation/Radial-wavefunction-hwallR5.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
@@ -201,56 +201,56 @@ order = [1,4,0,5,6,3,2,7]
 ax2.legend([handles[idx] for idx in order],[labels[idx] for idx in order],loc = 7, handlelength = 1.5)
 ax2.set_xlim(0,4.9)
 
-fname = "../data/Radial-wavefunction-KR6.npz"
+fname = "../data/Relaxation/Radial-wavefunction-KR6.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax3.plot(rval,radial, 'o-', label="K",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-CsR6.npz"
+fname = "../data/Relaxation/Radial-wavefunction-CsR6.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax3.plot(rval,radial, 'o-', label="Cs",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-ArR6.npz"
+fname = "../data/Relaxation/Radial-wavefunction-ArR6.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax3.plot(rval,radial, 'o-', label="Ar",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-AuR6.npz"
+fname = "../data/Relaxation/Radial-wavefunction-AuR6.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax3.plot(rval,radial, 'o-', label="Au",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-RbR6.npz"
+fname = "../data/Relaxation/Radial-wavefunction-RbR6.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax3.plot(rval,radial, 'o-', label="Rb",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-MgR6.npz"
+fname = "../data/Relaxation/Radial-wavefunction-MgR6.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax3.plot(rval,radial, 'o-', label="Mg",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-NeR6.npz"
+fname = "../data/Relaxation/Radial-wavefunction-NeR6.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax3.plot(rval,radial, 'o-', label="Ne",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-hwallR6.npz"
+fname = "../data/Relaxation/Radial-wavefunction-hwallR6.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
@@ -263,56 +263,56 @@ ax3.set_xlabel('r (Å)',fontsize=10)
 ax3.set_xlim(0,5.9)
 #ax3.legend(handlelength = 1.5)
 
-fname = "../data/Radial-wavefunction-KR8.npz"
+fname = "../data/Relaxation/Radial-wavefunction-KR8.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax4.plot(rval,radial, 'o-', label="K",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-CsR8.npz"
+fname = "../data/Relaxation/Radial-wavefunction-CsR8.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax4.plot(rval,radial, 'o-', label="Cs",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-ArR8.npz"
+fname = "../data/Relaxation/Radial-wavefunction-ArR8.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax4.plot(rval,radial, 'o-', label="Ar",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-AuR8.npz"
+fname = "../data/Relaxation/Radial-wavefunction-AuR8.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax4.plot(rval,radial, 'o-', label="Au",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-RbR8.npz"
+fname = "../data/Relaxation/Radial-wavefunction-RbR8.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax4.plot(rval,radial, 'o-', label="Rb",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-MgR8.npz"
+fname = "../data/Relaxation/Radial-wavefunction-MgR8.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax4.plot(rval,radial, 'o-', label="Mg",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-NeR8.npz"
+fname = "../data/Relaxation/Radial-wavefunction-NeR8.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax4.plot(rval,radial, 'o-', label="Ne",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-hwallR8.npz"
+fname = "../data/Relaxation/Radial-wavefunction-hwallR8.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
@@ -325,56 +325,56 @@ ax4.set_xlabel('$r$ [Å]',fontsize=10)
 ax4.set_xlim(0,7.9)
 #ax4.legend(handlelength = 1.5)
 
-fname = "../data/Radial-wavefunction-KR10.npz"
+fname = "../data/Relaxation/Radial-wavefunction-KR10.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax5.plot(rval,radial, 'o-', label="K",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-CsR10.npz"
+fname = "../data/Relaxation/Radial-wavefunction-CsR10.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax5.plot(rval,radial, 'o-', label="Cs",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-ArR10.npz"
+fname = "../data/Relaxation/Radial-wavefunction-ArR10.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax5.plot(rval,radial, 'o-', label="Ar",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-AuR10.npz"
+fname = "../data/Relaxation/Radial-wavefunction-AuR10.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax5.plot(rval,radial, 'o-', label="Au",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-RbR10.npz"
+fname = "../data/Relaxation/Radial-wavefunction-RbR10.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax5.plot(rval,radial, 'o-', label="Rb",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-MgR10.npz"
+fname = "../data/Relaxation/Radial-wavefunction-MgR10.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax5.plot(rval,radial, 'o-', label="Mg",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-NeR10.npz"
+fname = "../data/Relaxation/Radial-wavefunction-NeR10.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax5.plot(rval,radial, 'o-', label="Ne",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-hwallR10.npz"
+fname = "../data/Relaxation/Radial-wavefunction-hwallR10.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
@@ -387,56 +387,56 @@ ax5.set_xlabel('$r$ [Å]',fontsize=10)
 ax5.set_xlim(0,9.9)
 #ax5.legend(handlelength = 1.5)
 
-fname = "../data/Radial-wavefunction-KR12.npz"
+fname = "../data/Relaxation/Radial-wavefunction-KR12.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax6.plot(rval,radial, 'o-', label="K",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-CsR12.npz"
+fname = "../data/Relaxation/Radial-wavefunction-CsR12.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax6.plot(rval,radial, 'o-', label="Cs",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-ArR12.npz"
+fname = "../data/Relaxation/Radial-wavefunction-ArR12.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax6.plot(rval,radial, 'o-', label="Ar",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-AuR12.npz"
+fname = "../data/Relaxation/Radial-wavefunction-AuR12.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax6.plot(rval,radial, 'o-', label="Au",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-RbR12.npz"
+fname = "../data/Relaxation/Radial-wavefunction-RbR12.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax6.plot(rval,radial, 'o-', label="Rb",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-MgR12.npz"
+fname = "../data/Relaxation/Radial-wavefunction-MgR12.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax6.plot(rval,radial, 'o-', label="Mg",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-NeR12.npz"
+fname = "../data/Relaxation/Radial-wavefunction-NeR12.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
 norm = normalize_psi_PIMC(radial,rval)
 ax6.plot(rval,radial, 'o-', label="Ne",alpha=0.5)
 
-fname = "../data/Radial-wavefunction-hwallR12.npz"
+fname = "../data/Relaxation/Radial-wavefunction-hwallR12.npz"
 with np.load(fname, 'rb') as f:
     rval = f['arr_0']
     radial = f['arr_1']
@@ -448,7 +448,7 @@ ax6.set_ylabel(r'$|\psi(r)|^2$',fontsize=10)
 ax6.set_xlabel('$r$ [Å]',fontsize=10)
 ax6.set_xlim(0,11.9)
 #ax6.legend(handlelength = 1.5)
-plt.savefig("Density_plot.pdf")
+plt.savefig("../figures/Density_plot.pdf")
 plt.show()
 
 

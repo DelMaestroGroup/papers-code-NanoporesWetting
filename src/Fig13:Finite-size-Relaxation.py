@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import scipy.integrate as intgr
-plt.style.use('aps.mplstyle')
+plt.style.use('../include/aps.mplstyle')
 mpl.rcParams["figure.figsize"] = [3.4039, 2.10373]
 
 rm = 2.9673;
@@ -11,17 +11,17 @@ def normalize_psi_PIMC(psi, x):
    print ("Norm = " + str(int_psi_square))
    return int_psi_square
 
-fname = "../data/Radial-wavefunction-CsR6.npz"
+fname = "../data/Relaxation/Radial-wavefunction-CsR6.npz"
 with np.load(fname, 'rb') as f:
     rvalCs6 = f['arr_0']
     radialCs6 = f['arr_1']
 
-fname = "../data/Radial-wavefunction-Csz16.npz"
+fname = "../data/Relaxation/Radial-wavefunction-Csz16.npz"
 with np.load(fname, 'rb') as f:
     rvalCsz16 = f['arr_0']
     radialCsz16 = f['arr_1']
 
-fname = "../data/Radial-wavefunction-Cs96.npz"
+fname = "../data/Relaxation/Radial-wavefunction-Cs96.npz"
 with np.load(fname, 'rb') as f:
     rvalCs96 = f['arr_0']
     radialCs96 = f['arr_1']
@@ -41,6 +41,6 @@ with plt.style.context('aps'):
    ax2.set_xlim(0,5.999)
    ax1.legend(handlelength=1)
    ax2.legend(handlelength=1)
-   plt.savefig('Finite-size-relaxation.pdf')
+   plt.savefig('../figures/Finite-size-relaxation.pdf')
    plt.show()
 
