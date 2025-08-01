@@ -3,9 +3,10 @@ import scipy.special as scp
 import scipy.integrate as intgr
 import matplotlib.pyplot as plt
 import matplotlib as mpl
+from scipy.interpolate import interp1d
+
 
 plt.style.use('../include/aps.mplstyle')
-mpl.rcParams["figure.figsize"] = [3.4039, 2.10373]
 rm = 2.9673;
 
 def PIMC_potential(r,R):
@@ -82,6 +83,9 @@ xval = np.linspace(lb,rb,p)
 xval2 = np.linspace(0.001,14.5,500)
 rHe = 1.4
 
+def ave_r(r,ρ,R, L=25.0, N=2):
+       return 2*np.pi*L*intgr.simpson(y = r*r*ρ, x = r)/N
+
 with np.load("../data/Relaxation/Radial-wavefunction-CsR8.npz") as f:
     Csrval = f['arr_0']
     Csradial = f['arr_1']
@@ -89,43 +93,68 @@ with np.load("../data/Relaxation/Radial-wavefunction-CsR8.npz") as f:
 with np.load("../data/Relaxation/Radial-wavefunction-ArR8.npz") as f:
     Arrval = f['arr_0']
     Arradial = f['arr_1']
-    
-with plt.style.context('aps'):
+
+oAve = ave_r(Arrval, Arradial,8.0)
+print('oAve = ',oAve)
+
+_r = np.linspace(0,7.85,1000)
+with plt.style.context('../include/aps.mplstyle'):
     figsize = plt.rcParams['figure.figsize']
     fig,ax = plt.subplots(figsize=(figsize[0],figsize[1]), constrained_layout=True)
 
     ax.set_ylim(-10,10.5)
-    ax.set_xlim(0,8)
+    ax.set_xlim(0,7.8)
     #plt.title('Radial Helium - Cesium interaction potential')
-    ax.set_ylabel(r'$U_{\rm pore}$ [K]')
-    ax.set_xlabel(r'$r$ [$\rm \AA$]')
+    #ax.set_ylabel(r'$U_{\rm pore}$ [K]')
+    #ax.set_xlabel(r'$r$ [$\rm \AA$]')
     ax.plot(xval,V_infinite(xval), color='k')
     Csradial = 2000*Csradial
     Arradial = 2000*Arradial
-    ax.plot(Csrval,Csradial, color='#5E4Fa2', label = 'Cs')
-    ax.plot(Arrval,Arradial, color='#D7414E', label = 'Ar')
+
+    ρ_cubic = interp1d(Csrval, Csradial, kind='cubic')
+    ax.plot(_r,ρ_cubic(_r), color='#5E4Fa2', label = 'Cs')
+    aver_Cs = ave_r(_r, ρ_cubic(_r), 8.0)/2000
+    ax.axvline(aver_Cs, color='#5E4Fa2', linestyle='--', linewidth=0.5)
+
+    ρ_cubic = interp1d(Arrval, Arradial, kind='cubic')
+    ax.plot(_r,ρ_cubic(_r), color='#D7414E', label = 'Ar')
+    aver_Ar = ave_r(_r, ρ_cubic(_r), 8.0)/2000
+    ax.axvline(aver_Ar, color='#D7414E', linestyle='--', linewidth=0.5)
+    
     r0x = 6.424
     r0y = -5.194
-    ax.plot(r0x,r0y,'ro')
-    ax.text(6.30, -6.5, r'$r_0$', fontsize=8)
+    ax.axvline(r0x, color='#000000', linestyle='--', linewidth=0.5)
+
+    #ax.plot(r0x,r0y,'ro')
+    #ax.text(6.30, -6.5, r'$r_0$', fontsize=8)
     yval = -7.5
-    ax.plot([r0x+2*rHe,r0x-2*rHe],[yval,yval],color='k', linestyle='-', linewidth=1)
+    #ax.fill_betweenx([r0x+2*rHe,r0x-2*rHe],[yval,yval],color='k', linestyle='-', linewidth=1)
+    ax.axvspan(r0x-2*rHe, 8.0, alpha=0.1, edgecolor='none', facecolor='#858585', zorder=-100)
+    #print(r0x+2*rHe)
     #ax.vlines(r0x-2*rHe,-10,10.5,color='k',linestyle='--')
     #ax.vlines(7.8,-10,10.5,color='k',linestyle='--')
     #ax.arrow(r0x,yval,2*rHe,0,length_includes_head=True,head_width=0.3, head_length=0.1)
     #ax.arrow(rHe/2,yval,rHe/2,0,length_includes_head=True,head_width=0.3, head_length=0.1)
     #ax.plot([0,rHe],[yval,yval],color='k', linestyle='-', linewidth=1)
-    ax.text(3.8, 4, r'$\rho(r)$', fontsize=8)
+    ax.text(0.05,Csradial[0]+0.2 , r'$\varrho(r)\rvert_{\rm Cs}$', color='#5E4FA2', va='bottom')
+    ax.text(0.05,Arradial[0]+0.2 , r'$\varrho(r)\rvert_{\rm Ar}$', color='#D7414E', va='bottom')
+    ax.text(r0x+0.1,r0y , r'$U_{\rm pore}$', va='top')
+
+
     #ax.text(rHe/2-0.4, -8.5, r'$\rho_{{\rm vdW}}$', fontsize=8)
-    plt.text(6.30-0.2, -8.5, r'$\rho_{{\rm well}}$', fontsize=8)
+    #plt.text(6.30-0.2, -8.5, r'$\rho_{{\rm well}}$', fontsize=8)
     #plt.plot(xval,V_2shell(xval)+PIMC_potential_MCM(xval,26.72),label=r'$U_{Cs/MCM}(r)$ (2 layer)')
     #plt.plot(xval,V_shell(xval)+PIMC_potential_MCM(xval,12.86),label=r'$U_{Cs/MCM}(r)$ (1 layer)')
     #plt.plot(xval2,PIMC_potential_MCM(xval2,15.51),label=r'$U(r)}$')
     #plt.plot(xval,Ucyl_MCM(xval,15.51), label=r'$U_{cyl}$')
-    ax.legend(handlelength = 1.5)
-    ax.set_xticks([])
-    ax.set_xticks([], minor=True)
+    #ax.legend(handlelength = 1.5)
+
+    ax.set_xticks([0, aver_Cs, aver_Ar, r0x-2*rHe, r0x,7.8])
+    ax.set_xticklabels(['0', r'$\langle r\rangle_{\rm Cs}$', r'$\langle r\rangle_{\rm Ar}$', 
+                        r'$r_0-2r_{\rm He}$', r'$r_0$', r'$R$'], rotation=0)
+
     ax.set_yticks([])
     ax.set_yticks([], minor=True)
     plt.savefig('../figures/Wetting_parameter.pdf')
+
     plt.show()

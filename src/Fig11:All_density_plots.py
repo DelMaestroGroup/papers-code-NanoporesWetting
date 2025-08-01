@@ -36,7 +36,7 @@ with plt.style.context('../include/aps.mplstyle'):
             norm = normalize_psi_PIMC(radial, rval)
             
             #ax[iR].plot(rval/R, radial, 'o', mfc=c, mec=c,label=element)
-            ax[iR].plot(rval/R, radial, 'o:', mfc=c, mec=c, color=c,
+            ax[iR].plot(rval/R, radial, 'o:', mfc=colortools.get_alpha_hex(c,0.7), mec=c, color=c,
                         label=element, linewidth=0.5)
             #ρ_cubic = interp1d(rval/R, radial, kind='cubic')
             #ax[iR].plot(_r, ρ_cubic(_r), '-', color=colortools.get_alpha_hex(c,0.5, real=True),linewidth=0.5)
