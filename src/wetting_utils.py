@@ -15,6 +15,9 @@ element_colors = {'Ar':'#D7414E', 'K':'#79C9A4', 'Cs':"#5E4FA2", 'Mg':'#C2E69F',
 ɛ = {'Cs': 1.359, 'Ar':  36.136, 'Au':  19.59, 'K': 1.512, 'Mg': 5.661, 'Rb': 1.251, 'Ne': 19.75}
 n_density = {'Cs': 0.0091 ,'Ar':  0.0265, 'Au':  0.0595, 'K': 0.0139, 'Mg': 0.0437, 'Rb': 0.0114, 'Ne': 0.0440}
 
+# a common label for all dictionaries
+def lab(element,R):
+    return f'{element} {R:.1f} Å'
 
 # get a file name for a given element and radius R
 def ψ_filename(R, element):
