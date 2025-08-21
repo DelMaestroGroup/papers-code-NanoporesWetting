@@ -4,7 +4,7 @@ import matplotlib as mpl
 import scipy.special as scp
 import scipy.integrate as intgr
 
-plt.style.use('aps')
+plt.style.use('../include/aps.mplstyle')
 mpl.rcParams["figure.figsize"] = [2*3.4039, 2*2.10373]
 
 rm = 2.9673;
@@ -66,7 +66,8 @@ def V_shell_Cesium(x,R):
     R_out1 =  R
     R_in1 = R - 6.86
     return PIMC_potential(x,R_in1, 1.359, 5.44,0.0091)  - PIMC_potential(x,R_out1, 1.359, 5.44,0.0091) + PIMC_potential_MCM(x,R_out1)
-with plt.style.context('aps'):
+
+with plt.style.context('../include/aps.mplstyle'):
     figsize = plt.rcParams['figure.figsize']
     fig,ax = plt.subplots(figsize=(figsize[0],figsize[1]), constrained_layout=True)
     mpl.rcParams['axes.linewidth'] = 2.0
@@ -77,10 +78,10 @@ with plt.style.context('aps'):
     r2 = np.linspace(0,12.0,100)
     #ax.plot(r,V_shell_Cesium(r2,R1), linestyle='solid', color='green',label='MCM-41/Cs (1 layer)')
     ax.plot(r,PIMC_potential(r,R2,1.359, 5.44,0.0091), linestyle='--', color='#5E4Fa2',label='Infinite Cs')
-    ax.plot(r,V_2shell_Cesium(r,R), linestyle='solid', color='#5E4Fa2',alpha=0.7,label='MCM-41/Cs (2 layers)')
+    ax.plot(r,V_2shell_Cesium(r,R), linestyle='solid', color='#5E4Fa2',alpha=0.7,label='MCM-41/Cs/Cs (2 layers)')
     ax.legend(handlelength = 1)
-    ax.set_ylabel(r'$V$ [K]')
-    ax.set_xlabel(r'$r$ [Å]')
+    ax.set_ylabel(r'$U_{\rm pore}\; [{\rm K}]$')
+    ax.set_xlabel(r'$r\; [{\rm \AA}]$')
     ax.set_ylim(-19,19)
     ax.set_xlim(0,4.7)
     
