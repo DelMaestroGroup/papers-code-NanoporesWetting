@@ -134,7 +134,7 @@ if __name__ == "__main__":
         ax.plot(xval2,V_shell_Ar(xval2)+PIMC_potential_MCM(xval2,15.51),label=r'$U_{\rm Ar/MCM41}$',color='#D7414E', lw=1.5)
         ax.plot(xval,V_shell(xval)+PIMC_potential_MCM(xval,15.51),label=r'$U_{\rm Cs/MCM41}$',color='#5E4Fa2', lw=1.5)
         #plt.plot(xval2,PIMC_potential_MCM(xval2,15.51),label=r'$U(r)}$')
-        ax.plot(xval2,PIMC_potential_MCM(xval2,15.51), label=r'$U_{\rm MCM41}$',color='k', lw=1.5)
+        ax.plot(xval2,PIMC_potential_MCM(xval2,15.51), label=r'$U_{\rm MCM41}$',color='k', lw=1.5, zorder=-1)
         ax.set_xlim(0,14.9)
         ax.legend(handlelength=1, loc=(0.55,0.05))    
         add_inset_image(fig,ax,'../figures/MCM41_with_argon_filtered.png',left=0.1,bottom=0.25,width=0.5)  

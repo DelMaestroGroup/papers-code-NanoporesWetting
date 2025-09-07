@@ -75,6 +75,7 @@ def normalize_psi_PIMC(psi, x, L=25.0, verbose=False):
        print ("Norm = " + str(int_psi_square))
    return int_psi_square
 
+
 # the helium-pore-wall potential used in PIMC
 def U_pore(r,R,eps,sig,den):
     rm = 2.9673  # Angstrom
