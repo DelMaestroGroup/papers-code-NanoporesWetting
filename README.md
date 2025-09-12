@@ -29,7 +29,10 @@ helium.
 This repository includes links, code, scripts, and data to generate the figures in a paper.
 
 ### Requirements
-The data in this project was generated via ...  Processed data is included in the [data](https://github.com/DelMaestroGroup/papers-code-template/tree/main/data) directory and the full raw simulation data set is available online at [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXXX)
+The data in this project was generated via two methods: Relaxation Method and Path Integral Monte Carlo. Processed data is included in the [data](https://github.com/DelMaestroGroup/papers-code-NanoporesWetting/tree/main/data) directory and the full raw simulation data set is available online at [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXXX)
+
+1. The two body data was generated using a accelerated relaxation method code given [here](https://github.com/paulsphys/relaxation/tree/main)
+2. All many body data was generated with quantum Monte Carlo using our [open source path integral software](https://code.delmaestro.org) also available on [github](https://github.com/delmaestrogroup/pimc).
 
 1. A minimal environment to execute these notebooks can be installed via `pip install -r requirements.txt`
 2. [Dependency Name](https://dependencelink)
