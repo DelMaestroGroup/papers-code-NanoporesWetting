@@ -47,34 +47,34 @@ This work was performed with support from the U.S. Department of Energy, Office 
 ### Figures
 
 #### Figure 01: Potential comparisons
-<img src="figures/UPore_vs_r_comparison.pdf" width="400px">
+<img src="figures/UPore_vs_r_comparison.svg" width="400px">
 
 #### Figure 02: Potential accuracy
-<img src="figures/Potential-comparison.pdff" width="400px">
+<img src="figures/Potential-comparison.svg" width="400px">
 
 #### Figure 03: Waterfall Plots
-<img src="figures/Waterfalls.pdf" width="400px">
+<img src="figures/Waterfalls.svg" width="400px">
 
 #### Figure 04: Radial densities for N=2
-<img src="figures/radial_density_N2.pdf" width="400px">
+<img src="figures/radial_density_N2.svg" width="400px">
 
 #### Figure 05: Wetting parameter illustration
-<img src="figures/Wetting_parameter.pdf" width="400px">
+<img src="figures/Wetting_parameter.svg" width="400px">
 
 #### Figure 06: Wetting parameter evolution
-<img src="figures/Wetting-parameters_combined_R.pdf" width="400px">
+<img src="figures/Wetting-parameters_combined_R.svg" width="400px">
 
 #### Figure 07: Phase diagram
-<img src="figures/wetting_phase_diagram.pdf" width="400px">
+<img src="figures/wetting_phase_diagram.svg" width="400px">
 
 #### Figure 08: Many Body densities
-<img src="figures/rho_vs_r_mu_Teq2.pdf" width="400px">
+<img src="figures/rho_vs_r_mu_Teq2.svg" width="400px">
 
 #### Figure 09: Linear density and compressibility
-<img src="figures/rho1d_compress_vs_mu.pdf" width="400px">
+<img src="figures/rho1d_compress_vs_mu.svg" width="400px">
 
 #### Figure 10: Relaxation and PIMC convergence
-<img src="figures/pimc_comparison.pdf" width="400px">
+<img src="figures/pimc_comparison.svg" width="400px">
 
 This figure is relesed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) and can be freely copied, redistributed and remixed.
 
