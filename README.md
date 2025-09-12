@@ -1,7 +1,7 @@
 [![Paper](https://img.shields.io/badge/paper-arXiv%3AXXXX.YYYYY-B31B1B.svg)](https://arxiv.org/abs/XXXX.YYYYY)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://zenodo.org/badge/latestdoi/XXXXYYYYY)
 
-# Localization and Wetting of $$^4$$He Inside Pre-plated Nanopores
+# Localization and Wetting of <sup>4</sup>He Inside Pre-plated Nanopores
 
 Sutirtha Paul, Taras Lakoba, Paul E. Sokol and Adrian Del Maestro
 
