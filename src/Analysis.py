@@ -6,10 +6,10 @@ import scipy.special as scp
 import matplotlib.pyplot as plt 
 import argparse
 
-parser = argparse.ArgumentParser(description='Creates the radial distribution from the full wavefunction data')
+parser = argparse.ArgumentParser(description='Takes the radial density and produces various properties')
 
 parser.add_argument('--filename','-f',required = True)
-parser.add_argument('-R',type = float, help = "The number of grid_points in the x-y plane", required = True)
+parser.add_argument('-R',type = float, help = "The radius of the pore", required = True)
 parser.add_argument('--Element', '-E', help = "Element", required = True)
 
 parsed_args = vars(parser.parse_args())
