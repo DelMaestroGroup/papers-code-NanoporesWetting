@@ -1,5 +1,6 @@
 [![Paper](https://img.shields.io/badge/paper-arXiv%3AXXXX.YYYYY-B31B1B.svg)](https://arxiv.org/abs/XXXX.YYYYY)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://zenodo.org/badge/latestdoi/XXXXYYYYY)
+[![DOI](https://zenodo.org/badge/905892320.svg)](https://doi.org/10.5281/zenodo.17109103)
+
 
 # Localization and Wetting of <sup>4</sup>He Inside Pre-plated Nanopores
 
