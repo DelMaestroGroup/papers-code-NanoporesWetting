@@ -18,7 +18,7 @@ and in this work we systematically explore the possibility of pre-plating pores 
 to reduce the pore size without localizing the confined superfluid. Through a direct solution of the
 few-body Schrodinger equation combined with quantum Monte Carlo simulations, we explore the
 behavior of helium confined inside cylindrical nanopores for a range of pre-plating elements, includ-
-ing rare gases and alkali metal. For rare gases, we find that helium remains strongly attracted to the
+ing rare gases and alkali metals. For rare gases, we find that helium remains strongly attracted to the
 pore walls and any atoms in the core form an incompressible liquid. For alkali metals such as Cs,
 weak interactions between helium and the pre-plating material prevent localization near the walls
 and enable delocalization in the pore center. Our results extend previous results for helium wetting
