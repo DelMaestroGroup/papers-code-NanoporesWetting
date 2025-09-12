@@ -34,10 +34,6 @@ The data in this project was generated via two methods: Relaxation Method and Pa
 1. The two body data was generated using a accelerated relaxation method code given [here](https://github.com/paulsphys/relaxation/tree/main)
 2. All many body data was generated with quantum Monte Carlo using our [open source path integral software](https://code.delmaestro.org) also available on [github](https://github.com/delmaestrogroup/pimc).
 
-1. A minimal environment to execute these notebooks can be installed via `pip install -r requirements.txt`
-2. [Dependency Name](https://dependencelink)
-3. ...
-
 ### Support
 This work was performed with support from the U.S. Department of Energy, Office of Science, Office of Basic Energy Sciences, under Award Number DE-SC0024333.
 
