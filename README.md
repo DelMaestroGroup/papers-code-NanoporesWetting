@@ -30,7 +30,7 @@ helium.
 This repository includes links, code, scripts, and data to generate the figures in a paper.
 
 ### Requirements
-The data in this project was generated via two methods: Relaxation Method and Path Integral Monte Carlo. Processed data is included in the [data](https://github.com/DelMaestroGroup/papers-code-NanoporesWetting/tree/main/data) directory and the full raw simulation data set is available online at [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXXX)
+The data in this project was generated via two methods: Relaxation Method and Path Integral Monte Carlo. Processed data is included in the [data](https://github.com/DelMaestroGroup/papers-code-NanoporesWetting/tree/main/data) directory and the full raw quantum Monte Carlo simulation data set is available online at [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17108613.svg)](https://doi.org/10.5281/zenodo.17108613).  The full wavefunction files for the 2-body Schrodinger equation are too large for online storage but can be regenerated on the order of 1 day on a single CPU via the code [here](https://github.com/paulsphys/relaxation)
 
 1. The two body data was generated using a accelerated relaxation method code given [here](https://github.com/paulsphys/relaxation/tree/main)
 2. All many body data was generated with quantum Monte Carlo using our [open source path integral software](https://code.delmaestro.org) also available on [github](https://github.com/delmaestrogroup/pimc).
@@ -38,9 +38,6 @@ The data in this project was generated via two methods: Relaxation Method and Pa
 ### Support
 This work was performed with support from the U.S. Department of Energy, Office of Science, Office of Basic Energy Sciences, under Award Number DE-SC0024333.
 
-<!--
-<img width="400px" src="https://new.nsf.gov/themes/custom/nsf_theme/components/images/logo/logo-desktop.svg">
--->
 <img width="400px" src="https://science.osti.gov/assets/img/doe-logos/logo.png">
 
 
