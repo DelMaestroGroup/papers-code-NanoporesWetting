@@ -1,4 +1,4 @@
-[![Paper](https://img.shields.io/badge/paper-arXiv%3AXXXX.YYYYY-B31B1B.svg)](https://arxiv.org/abs/XXXX.YYYYY)
+[![Paper](https://img.shields.io/badge/paper-arXiv%3A2509.10690-B31B1B.svg)](https://arxiv.org/abs/2509.10690)
 [![DOI](https://zenodo.org/badge/905892320.svg)](https://doi.org/10.5281/zenodo.17109103)
 
 
@@ -6,7 +6,7 @@
 
 Sutirtha Paul, Taras Lakoba, Paul E. Sokol and Adrian Del Maestro
 
-[arXiv:XXXX.YYYYY](https://arxiv.org/abs/XXXX.YYYYY)
+[arXiv:2509.10690](https://arxiv.org/abs/2509.10690)
 
 ### Abstract
 Low dimensional quantum fluids, where one can probe the effects of enhanced thermal and quan-
