@@ -44,7 +44,7 @@ with plt.style.context('../include/aps.mplstyle'):
         ax[iR].text(0.99, 0.97, f"$R = {R}\;$"+r"${\rm \AA}$", transform=ax[iR].transAxes,ha="right", va="top")
 
         if iR%2==0:
-            ax[iR].set_ylabel(r'$|\psi(r)|^2\;\; [{\rm \AA}^{-3}]$')
+            ax[iR].set_ylabel(r'$\varrho(r)\;\; [{\rm \AA}^{-3}]$')
 
         if iR>= len(Rs)-2:
             ax[iR].set_xlabel(r'$r/R$')

@@ -67,6 +67,14 @@ def V_shell_Cesium(x,R):
     R_in1 = R - 6.86
     return PIMC_potential(x,R_in1, 1.359, 5.44,0.0091)  - PIMC_potential(x,R_out1, 1.359, 5.44,0.0091) + PIMC_potential_MCM(x,R_out1)
 
+r = np.linspace(0,7.9,100)
+R = 28.58
+R1 = 8 + 6.86
+R2 = 28.58 - (3*6.86)
+
+print("Max deviation: ", np.max(np.abs(PIMC_potential(r,R2,1.359, 5.44,0.0091) - V_2shell_Cesium(r,R))))
+print("Deviation range: ", np.max(np.abs(PIMC_potential(r,R2,1.359, 5.44,0.0091) - V_2shell_Cesium(r,R))), " to ", np.min(np.abs(PIMC_potential(r,R2,1.359, 5.44,0.0091) - V_2shell_Cesium(r,R))))
+
 with plt.style.context('../include/aps.mplstyle'):
     figsize = plt.rcParams['figure.figsize']
     fig,ax = plt.subplots(figsize=(figsize[0],figsize[1]), constrained_layout=True)
